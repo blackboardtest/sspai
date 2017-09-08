@@ -4,6 +4,7 @@ hubble.getXML('https://sspai.com/feed', function (error, response, $) {
 		var url = $(this).find('link').text();
 		var key = url.substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.html'));
 		var dom = $(this);
+		console.log(dom.find('title').text());
 
 		articles.get('key', key, function (article) {
 			if (article) {
