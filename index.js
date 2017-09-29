@@ -12,12 +12,14 @@ hubble.getXML('https://sspai.com/feed', function (error, response, $) {
 
 			var title = dom.find('title').text().trim();
 			var content = dom.find('description').text();
+			var image = dom.find('img').eq(0).attr('src');
 
 			var article = {
 				id: id,
 				title: title,
 				content: content,
-				url: url
+				url: url,
+				image: image
 			};
 			articles.append(article);
 		});
